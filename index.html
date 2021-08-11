@@ -3,34 +3,57 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./css/globalStyle.css"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.3.0/font-awesome-animation.min.css"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.3.0/font-awesome-animation.css"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     </head>
 
     <body>
         <header class="text-center">
-            <h1>Seja bem vindo(a) ao Pdf Converter</h1>
+            <h1 class="title">Seja bem vindo(a) ao PDF Converter</h1>
         </header>
 
         <main class="main mt-10pc">
             <div>
-                <h2>Converta o seu arquivo aqui</h2>
-                <input type="file" placeholder="coloque seu arquivo aqui"/>
-                <!-- ondblclick="document.querySelector('.sub-items').style.display='none'" onclick="document.querySelector('.sub-items').style.display='block'" -->
+                <h2 class="subTitle">Converta o seu arquivo aqui</h2>
+                <label for="file" class="file-uploader">Insira seu arquivo aqui
+                    <span class="material-icons">
+                        &nbsp; drive_folder_upload
+                    </span>
+                </label>
+                <input id="file" type="file" />
+
                 <div class="theme-main">
                     <div class="dropdown">
-                        <label class="btn-dropdown">Docx</label>
-                        <input class="btn-dropdown inline"  type="checkbox"/>
+                        <label class="btn-dropdown" for="check-dropdown">Docx
+                            <span class="material-icons">
+                                expand_more
+                            </span>
+                        </label>
+
+                        <!-- TESTAAARR
+                        <span class="material-icons">
+                      arrow_back_ios_new
+                        </span> 
+                    
+                        <span class="material-icons">
+                        navigate_before
+                        </span>
+                    -->
+
+                        <input id="check-dropdown" class="check-dropdown btn-dropdown inline" name="botao" type="checkbox"/>
                         <div class="sub-items">
-                            <button class="btn-dropdown item">Xlsm</button>
-                            <button class="btn-dropdown item">PPTX</button>
-                            <button class="btn-dropdown item">TXT</button>
+                            <button class="item">Xlsm</button>
+                            <button class="item">PPTX</button>
+                            <button class="item">TXT</button>
                         </div>
                     </div>
 
                     <div class="conversor-pdf">
-                        <p class="inline pl-3">para</p>
-                        <h3 class="inline pr-3">PDF</h3>
+                        <p class="inline pl-4">para</p>
+                        <h3 class="inline pl-4 pr-6">PDF</h3>
+                        <span class="material-icons get_app">
+                            get_app
+                        </span>
                     </div>
                 
                 </div>

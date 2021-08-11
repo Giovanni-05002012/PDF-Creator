@@ -1,6 +1,43 @@
+@font-face {
+  font-family: "OldLondon";
+  src: url("./fontes/OldLondon.ttf") format("truetype"),
+    url("./fontes/Olondona.otf") format("opentype");
+  font-weight: normal;
+  font-size: normal;
+}
+
+@font-face {
+  font-family: "Seagram";
+  src: url("./fontes/Seagram\ tfb.ttf") format("truetype");
+  font-weight: normal;
+  font-size: normal;
+}
+
+@keyframes colors {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
 body {
   text-align: center;
-  background: url("../img/gradient-black.jpeg") repeat;
+  background: linear-gradient(45deg, #002366, #0f52ba, #fa8072, #ffdab9);
+  background-size: 300% 300%;
+  animation: colors 12s ease infinite;
+}
+
+.title {
+  text-align: center;
+  font-family: "OldLondon", Times, serif;
+  font-size: 3.3rem;
 }
 
 .text-center {
@@ -10,8 +47,9 @@ body {
 
 .main {
   color: #ffffff;
-  background-color: #130302;
+  background: linear-gradient(90deg, #362222, #171010, #423f3e, #2b2b2b);
   border-radius: 10px;
+  box-shadow: -14px 19px rgba(0, 0, 0, 0.4);
   width: 60%;
   position: absolute;
   right: 20%;
@@ -21,17 +59,40 @@ body {
   margin-top: 10%;
 }
 
+.subTitle {
+  text-align: center;
+  font-family: "Seagram", Times, serif;
+}
+
+.file-uploader {
+  padding-top: 1.6rem;
+  display: flex;
+  font-weight: bolder;
+  cursor: pointer;
+  margin-left: 66%;
+  color: yellow;
+}
+
+input[type="file"] {
+  display: none;
+}
+
 .theme-main {
   background-color: #92140c;
+  border-radius: 16%;
   height: 20vh;
-  padding-top: 2vh;
   display: flex;
+  padding: 5.7rem 0;
   align-items: center;
 }
 
 .dropdown {
-  width: 10%;
-  margin-left: 36%;
+  width: 14.9%;
+  margin-left: 14rem;
+}
+
+#check-dropdown {
+  display: none;
 }
 
 .inline {
@@ -43,6 +104,7 @@ body {
   width: 2vw;
   height: 10vh;
   padding-left: 1vw;
+  padding-top: 1.2rem;
 }
 
 .sub-items-displaied {
@@ -51,6 +113,26 @@ body {
 
 .item {
   padding-bottom: 1.8vh;
+  background-color: #92140c;
+  font-weight: bolder;
+  font-size: large;
+  color: white;
+  border: none;
+  width: 8vw;
+  height: 8vh;
+  cursor: pointer;
+  border: solid 1px #ffffff;
+  border-radius: 0.5rem;
+}
+
+.item:hover {
+  color: #130302;
+  border-color: #130302;
+}
+
+.item:active {
+  color: yellowgreen;
+  border-color: yellowgreen;
 }
 
 .btn-dropdown {
@@ -61,8 +143,12 @@ body {
   border-color: white;
   border-radius: 15%;
   border-width: 0.02vw;
-  width: 8vw;
-  height: 8vh;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: x-large;
+  font-weight: bolder;
+  border: solid 1px #ffffff;
+  border-radius: 2rem;
 }
 
 .btn-dropdown:hover {
@@ -71,14 +157,80 @@ body {
 }
 
 .btn-dropdown:active {
-  color: yellowgreen;
-  border-color: yellowgreen;
+  color: greenyellow;
+  border-color: greenyellow;
 }
 
-.pl-3 {
+.pl-4 {
   padding-left: 4vw;
 }
 
-.pr-3 {
-  padding-left: 4vw;
+.pr-6 {
+  padding-right: 6vw;
+}
+
+.get_app {
+  cursor: pointer;
+  border: solid 1px #ffffff;
+  margin-left: 4rem;
+  padding: 1rem 1rem;
+}
+
+.get_app:hover {
+  color: #130302;
+}
+
+.get_app:active {
+  color: greenyellow;
+}
+
+/**@media (max-width: 1000px){}*/
+
+@media (max-width: 992px) {
+  .dropdown {
+    margin-left: 0.6%;
+    margin-right: 4rem;
+  }
+
+  .item {
+    padding-right: 3.2rem;
+  }
+
+  .pl-4 {
+    padding-left: 2rem;
+  }
+
+  .get_app {
+    margin-left: 6rem;
+  }
+
+  .file-uploader {
+    text-align: center;
+    margin-left: 16%;
+    width: 13rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .dropdown {
+    margin-right: 2rem;
+  }
+
+  .item {
+    padding-right: 1.4rem;
+  }
+
+  .pl-4 {
+    padding-left: 1rem;
+  }
+
+  .get_app {
+    margin-left: 3rem;
+  }
+
+  .file-uploader {
+    text-align: center;
+    margin-left: 8%;
+    width: 3rem;
+  }
 }
