@@ -22,14 +22,18 @@
     background-position: 50% 100%;
   }
 
+  80% {
+    background-position: 100% 50%;
+  }
+
   100% {
-    background-position: 100% 0%;
+    background-position: 50% 0%;
   }
 }
 
 body {
   text-align: center;
-  background: linear-gradient(45deg, #002366, #0f52ba, #fa8072, #ffdab9);
+  background: linear-gradient(60deg, #002366, #0f52ba, #fa8072, #ffdab9);
   background-size: 300% 300%;
   animation: colors 12s ease infinite;
 }
@@ -38,6 +42,42 @@ body {
   text-align: center;
   font-family: "OldLondon", Times, serif;
   font-size: 3.3rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: solid 8px rgba(0, 0, 0, 0.1);
+  border-left-color: #22a6b3;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  animation: spin 1s linear infinite;
+  background: black;
+}
+
+.loading {
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.loading-background {
+  background: rgba(0, 0, 0, 1);
+}
+
+.transparent {
+  opacity: 0.1;
+}
+
+.n-box-shadow {
+  box-shadow: transparent;
 }
 
 .text-center {
@@ -100,15 +140,11 @@ input[type="file"] {
 }
 
 .sub-items {
-  display: none;
+  display: block;
   width: 2vw;
   height: 10vh;
   padding-left: 1vw;
   padding-top: 1.2rem;
-}
-
-.sub-items-displaied {
-  display: block;
 }
 
 .item {
@@ -159,6 +195,10 @@ input[type="file"] {
 .btn-dropdown:active {
   color: greenyellow;
   border-color: greenyellow;
+}
+
+.invisible {
+  display: none;
 }
 
 .pl-4 {
